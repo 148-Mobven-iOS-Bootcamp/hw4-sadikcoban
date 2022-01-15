@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dLW-i8-o6M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dLW-i8-o6M">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -463,11 +463,11 @@
                                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qtK-F7-FH4" id="qmu-G0-CQS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G8R-7A-SDZ">
-                                                            <rect key="frame" x="20" y="0.0" width="357.5" height="43.5"/>
+                                                            <rect key="frame" x="20" y="0.0" width="356.5" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                             <nil key="textColor"/>
@@ -533,11 +533,31 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrr-Hy-ewZ">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rlC-tD-7lo"/>
                                     <barButtonItem title="reload" image="arrow.clockwise" catalog="system" id="QY5-RS-4wc">
                                         <connections>
                                             <action selector="reloadButtonTapped:" destination="8R7-g3-9b9" id="xfH-1m-Kq8"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9Gi-gx-xNC"/>
+                                    <barButtonItem title="go-backward" image="backward.frame" catalog="system" id="rcY-wR-qNx">
+                                        <connections>
+                                            <action selector="goBackButtonTapped:" destination="8R7-g3-9b9" id="bVJ-7m-O1p"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kEr-0x-vXB"/>
+                                    <barButtonItem title="go-forward" image="forward.frame" catalog="system" id="GFT-6e-FCU">
+                                        <connections>
+                                            <action selector="goForwardButtonTapped:" destination="8R7-g3-9b9" id="Nfj-eD-TKg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rSq-n6-T2s"/>
+                                    <barButtonItem title="reload" image="safari.fill" catalog="system" id="IsC-SQ-HNY">
+                                        <connections>
+                                            <action selector="openInSafariButtonTapped:" destination="8R7-g3-9b9" id="bHl-d0-olh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="pab-wk-xPf"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -805,8 +825,11 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="backward.frame" catalog="system" width="128" height="99"/>
         <image name="bgImage" width="640" height="360"/>
+        <image name="forward.frame" catalog="system" width="128" height="99"/>
         <image name="location" catalog="system" width="128" height="118"/>
+        <image name="safari.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

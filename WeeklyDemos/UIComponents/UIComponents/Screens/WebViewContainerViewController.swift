@@ -63,6 +63,22 @@ class WebViewContainerViewController: UIViewController {
     @IBAction func reloadButtonTapped(_ sender: UIBarButtonItem) {
         webView.reload()
     }
+    
+    @IBAction func goBackButtonTapped(_ sender: UIBarButtonItem){
+        webView.goBack()
+        
+    }
+    @IBAction func goForwardButtonTapped(_ sender: UIBarButtonItem){
+        webView.goForward()
+        
+    }
+    @IBAction func openInSafariButtonTapped(_ sender: UIBarButtonItem){
+        //get current url of browsed website and pass it to safari
+        let currentURL = webView.url
+        guard let url = currentURL else { return }
+        UIApplication.shared.open(url)
+        
+    }
 }
 
 extension WebViewContainerViewController: WKNavigationDelegate {

@@ -22,6 +22,7 @@ class WebViewContainerViewController: UIViewController {
     }
 
     var urlString = "https://www.google.com"
+    
 
     func configureWebView() {
         guard let url = URL(string: urlString) else { return }
@@ -41,6 +42,8 @@ class WebViewContainerViewController: UIViewController {
                             options: .new,
                             context: nil)
         webView.load(urlRequest)
+        //load custom html
+        webView.loadHTMLString("<html><style>div {text-align: center;}</style><body><div><a href=https://www.google.com/>Google</a></div></body></html>", baseURL: nil)
     }
 
     func configureActivityIndicator() {
@@ -82,6 +85,14 @@ class WebViewContainerViewController: UIViewController {
 }
 
 extension WebViewContainerViewController: WKNavigationDelegate {
+    //function that changes font family of webview
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        let changeFontFamilyScript = "document.getElementsByTagName(\'body\')[0].style.fontFamily = \"Impact,Charcoal,sans-serif\";"
+        webView.evaluateJavaScript(changeFontFamilyScript) { (response, error) in
+            debugPrint("I Am here")
+        }
+    }
+
 
 }
 
